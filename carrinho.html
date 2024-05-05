@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; 
+            color: #fff; 
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #333; 
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #fff; 
+            margin-bottom: 20px;
+        }
+        
+        #lista-carrinho {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        #lista-carrinho li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #444; 
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        #lista-carrinho li button {
+            background-color: #ffc107; 
+            color: #fff; 
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        #lista-carrinho li button:hover {
+            background-color: #ffca28; 
+        }
+        
+        #limpar-carrinho, #voltar {
+            background-color: #ffc107; 
+            color: #fff; 
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: inline-block; 
+            transition: background-color 0.3s ease;
+        }
+        
+        #limpar-carrinho:hover, #voltar:hover {
+            background-color: #ffca28; 
+        }
+        
+        .empty-message {
+            text-align: center;
+            font-style: italic;
+            color: #777;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            #limpar-carrinho, #voltar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Seu Carrinho</h1>
+        <ul id="lista-carrinho"></ul>
+        <div class="button-container"> 
+            <button id="limpar-carrinho">Limpar Carrinho</button>
+            <button id="voltar" onclick="window.location.href = 'index.html'">Voltar para a Página Principal</button>
+        </div>
+        <p class="empty-message" id="empty-message"></p>
+    </div>
+
+    <script>
+      
+        function exibirItensCarrinho() {
+           
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+            let listaCarrinho = document.getElementById('lista-carrinho');
+            let emptyMessage = document.getElementById('empty-message');
+
+            listaCarrinho.innerHTML = '';
+
+            if (carrinho.length === 0) {
+               
+                emptyMessage.textContent = 'Carrinho vazio';
+            } else {
+                emptyMessage.textContent = ''; 
+
+               
+                carrinho.forEach(function(item, index) {
+                    let li = document.createElement('li');
+                    li.textContent = `${item.nome} - R$${item.preco.toFixed(2)}`;
+                    
+               
+                    let btnRemover = document.createElement('button');
+                    btnRemover.textContent = 'Remover';
+                    btnRemover.addEventListener('click', function() {
+                        removerItemDoCarrinho(index);
+                    });
+
+                    li.appendChild(btnRemover);
+
+                    listaCarrinho.appendChild(li);
+                });
+            }
+        }
+
+        function removerItemDoCarrinho(index) {
+           
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+           
+            carrinho.splice(index, 1);
+
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+           
+            exibirItensCarrinho();
+        }
+
+       
+        document.getElementById('limpar-carrinho').addEventListener('click', function() {
+            localStorage.removeItem('carrinho');
+            exibirItensCarrinho();
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            exibirItensCarrinho();
+        });
+    </script>
+</body>
+</html>
