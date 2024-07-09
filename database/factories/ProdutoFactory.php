@@ -19,16 +19,22 @@ class ProdutoFactory extends Factory
      */
     public function definition(): array
     {
-        $nome = $this->faker->word(); // Definindo a variável $nome corretamente
+        $nome = $this->faker->word();
+        $userIds = User::pluck('id');
+        $categoriaIds = Categoria::pluck('id');
+
+        if ($userIds->isEmpty() || $categoriaIds->isEmpty()) {
+            throw new \Exception("Users or categories table is empty");
+        }
 
         return [
             'nome' => $nome,
             'descricao' => $this->faker->paragraph(),
-            'preco' => $this->faker->randomNumber(2), // Corrigindo para $this->faker
+            'preco' => $this->faker->randomFloat(2, 1, 100),
             'slug' => Str::slug($nome),
             'imagem' => $this->faker->imageUrl(400, 400),
-            'id_user' => User::pluck('id')->random(),
-            'id_categoria' => Categoria::pluck('id')->random(),
+            'id_user' => $userIds->random(),
+            'id_categoria' => $categoriaIds->random(),
         ];
     }
 }
