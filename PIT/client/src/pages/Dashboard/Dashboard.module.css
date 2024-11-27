@@ -1,0 +1,121 @@
+/* Container Principal */
+.container {
+    padding: 30px 50px;
+    padding-top: 180px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5; /* Fundo claro */
+    color: #002244; /* Azul escuro */
+    min-height: 100vh; /* Garante que ocupe toda a altura da tela */
+  }
+  
+  /* Título Principal */
+  .header2 h1 {
+    font-size: 2.5em;
+    color: #ffa500; /* Laranja vibrante */
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Mensagens de Erro e Sucesso */
+  .error {
+    color: red;
+    font-size: 1.2em;
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+  .success {
+    color: green;
+    font-size: 1.2em;
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+  /* Subtítulo */
+  .titleLeft {
+    font-size: 1.8em;
+    color: #002244; /* Azul escuro */
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  /* Lista de Pedidos */
+  .orderList {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 1000px; /* Limita a largura */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Layout responsivo */
+    gap: 20px; /* Espaço entre os pedidos */
+  }
+  
+  /* Item de Pedido */
+  .orderItem {
+    background-color: #ffffff; /* Fundo branco */
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaçamento interno */
+  }
+  
+  /* Status do Pedido */
+  .statusPending {
+    border-left: 5px solid #ffa500; /* Laranja para Pendente */
+  }
+  
+  .statusPreparing {
+    border-left: 5px solid #007bff; /* Azul para Preparando */
+  }
+  
+  .statusReady {
+    border-left: 5px solid #28a745; /* Verde para Pronto */
+  }
+  
+  .statusCanceled {
+    border-left: 5px solid #dc3545; /* Vermelho para Cancelado */
+  }
+  
+  /* Texto dos Pedidos */
+  .orderItem p {
+    font-size: 1.2em;
+    color: #666; /* Texto em cinza */
+    margin: 0;
+  }
+  
+  /* Seletor de Status */
+  .select {
+    padding: 8px 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: all 0.3s ease;
+  }
+  
+  .select:focus {
+    border-color: #ffa500; /* Laranja ao focar */
+    outline: none;
+  }
+  
+  /* Botão de Excluir */
+  .deleteButton {
+    padding: 10px 15px;
+    background-color: #dc3545; /* Vermelho */
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .deleteButton:hover {
+    background-color: #c82333; /* Vermelho escuro */
+    transform: scale(1.05); /* Leve aumento no hover */
+  }
+  

@@ -1,0 +1,133 @@
+.header {
+  background-color: #002244; /* Azul escuro */
+  color: #ffffff; /* Texto branco */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que os itens sejam reorganizados quando necessário */
+  padding: 20px 30px; /* Espaçamento maior para respiro */
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+h1 {
+  font-size: 1.8em; /* Tamanho maior */
+  color: #ffa500; /* Laranja vibrante */
+  font-weight: 700; /* Negrito */
+  margin: 0;
+  flex-shrink: 0; /* Evita que o título encolha */
+}
+
+.menuToggle {
+  display: none;
+  color: #ffffff; /* Ícones em branco */
+  cursor: pointer;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap; /* Permite que o menu ocupe várias linhas */
+  align-items: center;
+  gap: 30px; /* Espaçamento mais confortável entre itens */
+  flex-grow: 1; /* Faz o menu usar o espaço disponível */
+  justify-content: flex-end;
+}
+
+.menuLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espaçamento entre links */
+  flex-wrap: wrap; /* Permite que os links quebrem linha se necessário */
+}
+
+.menuLinks a {
+  color: #cce7ff; /* Azul claro */
+  text-decoration: none;
+  font-size: 1.2em; /* Fonte maior */
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap; /* Evita quebra de palavras */
+}
+
+.menuLinks a:hover {
+  color: #ffa500; /* Laranja vibrante no hover */
+  transform: scale(1.05); /* Leve aumento no hover */
+}
+
+.accountIcon {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espaçamento entre os ícones */
+  flex-shrink: 0; /* Evita que os ícones encolham */
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ffa500; /* Ícone em laranja */
+  font-size: 1.5em; /* Ícones maiores */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.iconButton:hover {
+  color: #ffc15e; /* Tom mais claro no hover */
+  transform: rotate(10deg); /* Pequena rotação no hover */
+}
+
+.navOpen {
+  display: flex; /* Exibe o menu aberto */
+  flex-direction: column;
+  background-color: #002244; /* Mesma cor do header */
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 100%;
+  padding: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Destaque para o menu */
+  animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .menuToggle {
+    display: block; /* Exibe o botão de menu */
+    font-size: 2em; /* Ícone de menu maior */
+  }
+
+  .navbar {
+    display: none; /* Esconde o menu em telas menores */
+  }
+
+  .navOpen {
+    display: flex; /* Mostra o menu quando aberto */
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .menuLinks {
+    flex-direction: column; /* Itens empilhados */
+    align-items: flex-start;
+    gap: 15px; /* Espaçamento reduzido para telas menores */
+  }
+
+  .menuLinks a {
+    font-size: 1.1em; /* Ajuste para dispositivos menores */
+  }
+}

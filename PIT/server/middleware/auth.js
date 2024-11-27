@@ -1,0 +1,23 @@
+const jwt = require("jsonwebtoken");
+
+const authMiddleware = (req, res, next) => {
+  const authHeader = req.headers.authorization;
+  const token = authHeader && authHeader.split(" ")[1];
+
+  if (!token) {
+    console.log("Token ausente");
+    return res.status(401).json({ error: "Token ausente" });
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.userId = decoded.id;
+    req.userRole = decoded.role;
+    next();
+  } catch (error) {
+    console.log("Token inválido:", error.message);
+    res.status(401).json({ error: "Token inválido" });
+  }
+};
+
+module.exports = authMiddleware;

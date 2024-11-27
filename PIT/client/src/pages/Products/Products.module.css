@@ -1,0 +1,102 @@
+
+/* Container Principal */
+.container {
+  padding: 20px 40px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5; /* Fundo claro */
+  color: #002244; /* Azul escuro */
+  min-height: 100vh; /* Garante que ocupe toda a altura da tela */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo */
+}
+
+/* Título */
+h1 {
+  font-size: 2.5em; /* Título grande */
+  color: #ffa500; /* Laranja vibrante */
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Mensagens */
+.errorMessage {
+  color: red;
+  font-size: 1.2em;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.successMessage {
+  color: green;
+  font-size: 1.2em;
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* Lista de Produtos */
+.ul {
+  list-style: none;
+  padding-top: 75px;
+  margin: 20px auto;
+  max-width: 1000px; /* Centraliza e limita a largura */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Layout responsivo em colunas */
+  gap: 20px; /* Espaço entre os produtos */
+}
+
+/* Item de Produto */
+li {
+  background-color: #ffffff; /* Fundo branco */
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra suave */
+  padding: 20px;
+  text-align: center; /* Centraliza o conteúdo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+li h2 {
+  font-size: 1.5em; /* Nome do produto maior */
+  color: #002244; /* Azul escuro */
+  margin-bottom: 10px;
+}
+
+li p {
+  font-size: 1.2em; /* Texto maior */
+  color: #666; /* Cinza para detalhes */
+  margin: 5px 0;
+}
+
+li small {
+  font-size: 0.9em;
+  color: #aaa; /* Texto menor e discreto */
+}
+
+/* Imagem do Produto */
+li img {
+  width: 150px;
+  height: auto;
+  margin: 15px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Destaque com sombra */
+}
+
+/* Botão de Adicionar ao Carrinho */
+li button {
+  padding: 10px 15px;
+  background-color: #ffa500; /* Laranja */
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+li button:hover {
+  background-color: #ff8c00; /* Laranja escuro */
+  transform: scale(1.05); /* Leve aumento no hover */
+}

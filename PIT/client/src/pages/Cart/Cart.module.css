@@ -1,0 +1,165 @@
+/* Container Principal */
+.container {
+  padding: 30px 50px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5; /* Fundo claro */
+  color: #002244; /* Azul escuro */
+  min-height: 100vh; /* Garante que ocupe toda a altura da tela */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Título */
+h1 {
+  font-size: 2.5em; /* Título maior */
+  color: #ffa500; /* Laranja vibrante */
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Mensagem de Pedido Confirmado */
+.confirmationMessage {
+  color: green;
+  font-size: 1.4em;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Mensagem de Carrinho Vazio */
+.emptyCartMessage {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 30px 0;
+  color: #666;
+}
+
+/* Lista de Produtos */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 900px; /* Largura aumentada */
+  width: 100%; /* Garante que ocupe todo o espaço disponível */
+}
+
+li {
+  background-color: #ffffff; /* Fundo branco */
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+  padding: 25px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; /* Espaçamento entre os itens */
+  flex-wrap: wrap; /* Ajusta os elementos para múltiplas linhas, se necessário */
+}
+
+/* Nome do Produto */
+li h2 {
+  font-size: 1.8em; /* Nome maior */
+  color: #002244; /* Azul escuro */
+  margin: 0;
+}
+
+/* Preço do Produto */
+li p {
+  font-size: 1.3em;
+  color: #666; /* Cinza para detalhe */
+  margin: 5px 0;
+}
+
+/* Controle de Quantidade */
+li div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+li input[type="number"] {
+  width: 80px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.2em; /* Tamanho maior */
+  color: #333;
+  text-align: center;
+}
+
+/* Botões de Produto */
+li button {
+  padding: 10px 15px;
+  background-color: #ffa500; /* Laranja */
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 1.2em; /* Botões maiores */
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+li button:hover {
+  background-color: #ff8c00; /* Laranja escuro */
+  transform: scale(1.05); /* Leve aumento no hover */
+}
+
+/* Total */
+h3 {
+  font-size: 2em; /* Destaque maior para o total */
+  text-align: center;
+  color: #002244; /* Azul escuro */
+  margin: 30px 0;
+}
+
+/* Botões de Ações */
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.orderButton {
+  padding: 15px 30px;
+  background-color: #ffa500; /* Laranja */
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 1.5em; /* Botões maiores */
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.orderButton:hover {
+  background-color: #ff8c00; /* Laranja escuro */
+  transform: scale(1.05); /* Leve aumento no hover */
+}
+
+.clearButton {
+  padding: 15px 30px;
+  background-color: #ccc; /* Cinza claro */
+  border: none;
+  border-radius: 6px;
+  color: #333;
+  font-size: 1.5em; /* Botões maiores */
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.clearButton:hover {
+  background-color: #aaa; /* Cinza escuro */
+  transform: scale(1.05); /* Leve aumento no hover */
+}
+
+.div {
+  padding: 70px;
+}
+
+.topo {
+  padding-top: 180px;
+}

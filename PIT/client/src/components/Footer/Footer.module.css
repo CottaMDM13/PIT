@@ -1,0 +1,69 @@
+.footer {
+  background-color: #002244; /* Azul escuro elegante */
+  color: #ffffff; /* Texto branco para contraste */
+  padding: 15px; /* Compacto, mas com espaçamento suficiente */
+  font-family: 'Poppins', sans-serif; /* Fonte moderna e clean */
+}
+
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* Espaçamento entre seções */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerSection {
+  
+  width: 100%;
+  max-width: 600px; /* Seções mais largas */
+  text-align: center;
+}
+
+.footerSection h4 {
+  font-size: 1.2em; /* Títulos menores */
+  margin-bottom: 8px; /* Espaçamento reduzido */
+  color: #ffa500; /* Laranja vibrante para destaque */
+  font-weight: 600; /* Negrito moderado */
+}
+
+.footerSection p {
+  font-size: 0.9em; /* Texto menor para economia de espaço */
+  line-height: 1.4; /* Espaçamento otimizado entre linhas */
+  color: #cce7ff; /* Azul claro para suavidade */
+  text-align: justify; /* Alinhamento justificado para elegância */
+  margin: 0; /* Sem espaçamento extra */
+}
+
+.footerBottom {
+  margin-top: 10px;
+  font-size: 0.75em; /* Texto menor para rodapé */
+  text-align: center;
+  color: #99bbdd; /* Tom azul discreto */
+}
+
+.footerSection a {
+  color: #ffa500; /* Links em laranja vibrante */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footerSection a:hover {
+  color: #ffc15e; /* Hover em tom mais claro de laranja */
+}
+
+@media (min-width: 768px) {
+  .footerContent {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 20px; /* Ajuste para centralizar conteúdo */
+  }
+
+  .footerSection {
+    max-width: 500px; /* Ajuste para melhor visualização em telas maiores */
+    text-align: left; /* Ajuste de alinhamento */
+  }
+}
